@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Virginia Resort</title>
+<title>Virginia Hall</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap">
@@ -128,6 +128,7 @@ section{padding-block:64px}
 .acard h3{font-size:17.5px;margin-bottom:6px}
 .acard p{color:var(--muted);font-size:14px}
 .included{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;color:var(--brand);font-weight:600}
+.addcost{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;color:var(--gold);font-weight:600}
 
 /* gallery */
 .ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -206,11 +207,11 @@ var GAL=[
 
 var T={
 ar:{
- dir:'rtl', brand:'منتجع فرجينيا', sub:'حائل',
+ dir:'rtl', brand:'قاعة فرجينيا', sub:'حائل',
  nav_home:'الرئيسية', nav_halls:'القاعات', nav_gallery:'معرض الصور', nav_loc:'الموقع', nav_contact:'تواصل معنا',
  nav_book:'تحقق من التوفر', nav_book_long:'تحقق من التوفر واحجز',
  heroEyebrow:'قاعة أفراح ومناسبات', heroTitle:'احتفالات أنيقة تليق بمناسبتكم في قلب حائل',
- heroLead:'منتجع فرجينيا يضم قاعتين منفصلتين للرجال والنساء بتصميم راقٍ، إضاءة كريستالية، وأرضيات رخامية، مع صالة انتظار خاصة للعروس وقاعة طعام مشتركة.',
+ heroLead:'قاعة فرجينيا تضم قاعتين منفصلتين للرجال والنساء بتصميم راقٍ، إضاءة كريستالية، وأرضيات رخامية، مع صالة انتظار خاصة للعروس وقاعة طعام مشتركة.',
  chip1:'قاعتان منفصلتان', chip2:'وسط مدينة حائل', chip3:'يومياً 12 ظهراً – 3 فجراً',
  heroBtn1:'تحقق من التوفر وأرسل طلب حجز', heroBtn2:'تواصل عبر واتساب',
  aboutEyebrow:'من نحن', aboutTitle:'مكان صُمم لمناسباتكم الكبرى',
@@ -224,28 +225,28 @@ ar:{
  menName:'قاعة الرجال', menDesc:'قاعة بلمسة عصرية بألوان الرمادي الداكن، جلسات لاونج مريحة ونوافذ ممتدة من الأرض إلى السقف.',
  f_chand:'ثريات كريستالية', f_marble:'أرضيات رخامية', f_seat:'جلسات فاخرة', f_ac:'تكييف مركزي',
  f_lounge:'جلسات لاونج عصرية', f_window:'نوافذ بانورامية', f_sound:'نظام صوتي', f_spacious:'مساحة واسعة',
- perBooking:'شامل لليوم كاملاً · وليس للفرد', priceNote:'الأسعار المعروضة استرشادية، ويتم تأكيد السعر النهائي عند التواصل معكم.',
+ perBooking:'تواصلوا معنا لمعرفة السعر', priceNote:'يتم تحديد السعر عند التواصل معنا.',
  viewPhotos:'عرض الصور',
  amenEyebrow:'خدمات إضافية', amenTitle:'يأتي مع حجزكم',
  brideName:'صالة انتظار العروس', brideDesc:'صالة خاصة وعصرية تنتظر فيها العروس براحة قبل دخولها القاعة.',
  diningName:'قاعة الطعام المشتركة', diningDesc:'قاعة طعام مخصصة بطاولات رخامية، مشتركة بين القاعتين لضيافة ضيوفكم.',
- included:'ضمن الحجز مجاناً',
+ included:'ضمن الحجز مجاناً', additionalCost:'برسوم إضافية',
  galEyebrow:'لمحة', galTitle:'معرض الصور',
  locEyebrow:'الموقع وساعات العمل', locTitle:'تفضلوا بزيارتنا',
  addrLabel:'العنوان', addrVal:'شارع الأمير سعود بن عبدالمحسن آل سعود، النقرة، حائل 55433',
  hoursLabel:'ساعات الاستقبال', hoursVal:'يومياً من 12 ظهراً حتى 3 فجراً',
  phoneLabel:'الهاتف / واتساب',
  igLabel:'إنستغرام', igVal:'virginia_hail@',
- directions:'فتح في خرائط جوجل', mapPin:'منتجع فرجينيا', mapCity:'حائل، السعودية',
+ directions:'فتح في خرائط جوجل', mapPin:'قاعة فرجينيا', mapCity:'حائل، السعودية',
  ctaTitle:'جاهزون لاستضافة مناسبتكم؟', ctaLead:'تحققوا من توفر التاريخ المناسب لكم وأرسلوا طلب الحجز، وسنتصل بكم لتأكيد التفاصيل.',
  ctaBtn:'تحقق من التوفر واحجز', footRights:'جميع الحقوق محفوظة', lang:'English'
 },
 en:{
- dir:'ltr', brand:'Virginia Resort', sub:'Hail',
+ dir:'ltr', brand:'Virginia Hall', sub:'Hail',
  nav_home:'Home', nav_halls:'Halls', nav_gallery:'Gallery', nav_loc:'Location', nav_contact:'Contact',
  nav_book:'Check availability', nav_book_long:'Check availability & book',
  heroEyebrow:'Weddings & Gatherings', heroTitle:'Elegant celebrations in the heart of Hail',
- heroLead:'Virginia Resort offers separate, independent halls for men and women, finished with crystal chandeliers and marble floors, plus a private bride’s lounge and a shared dining hall.',
+ heroLead:'Virginia Hall offers separate, independent halls for men and women, finished with crystal chandeliers and marble floors, plus a private bride’s lounge and a shared dining hall.',
  chip1:'Two separate halls', chip2:'Central Hail', chip3:'Daily 12 PM – 3 AM',
  heroBtn1:'Check availability & request booking', heroBtn2:'Message on WhatsApp',
  aboutEyebrow:'About us', aboutTitle:'A place built for your biggest moments',
@@ -259,19 +260,19 @@ en:{
  menName:'Men’s Hall', menDesc:'A contemporary hall in charcoal tones, with comfortable lounge seating and floor-to-ceiling windows.',
  f_chand:'Crystal chandeliers', f_marble:'Marble floors', f_seat:'Premium seating', f_ac:'Central A/C',
  f_lounge:'Modern lounge seating', f_window:'Floor-to-ceiling windows', f_sound:'Sound system', f_spacious:'Spacious floor',
- perBooking:'Whole hall, per day · not per guest', priceNote:'Rates shown are a guide — final pricing is confirmed when we get in touch with you.',
+ perBooking:'Contact us for pricing', priceNote:'Pricing is provided when you contact us.',
  viewPhotos:'View photos',
  amenEyebrow:'Included', amenTitle:'Comes with your booking',
  brideName:'Bride’s Lounge', brideDesc:'A private, modern lounge where the bride can relax before making her entrance into the hall.',
  diningName:'Shared Dining Hall', diningDesc:'A dedicated dining room with marble tables, shared between both halls for your catering.',
- included:'Included free',
+ included:'Included free', additionalCost:'Additional cost',
  galEyebrow:'A look inside', galTitle:'Gallery',
  locEyebrow:'Location & hours', locTitle:'Come visit us',
  addrLabel:'Address', addrVal:'Prince Saud bin Abdulmohsen Al Saud St, Al-Nuqrah, Hail 55433',
  hoursLabel:'Reception hours', hoursVal:'Daily, 12 PM – 3 AM',
  phoneLabel:'Phone / WhatsApp',
  igLabel:'Instagram', igVal:'@virginia_hail',
- directions:'Open in Google Maps', mapPin:'Virginia Resort', mapCity:'Hail, Saudi Arabia',
+ directions:'Open in Google Maps', mapPin:'Virginia Hall', mapCity:'Hail, Saudi Arabia',
  ctaTitle:'Ready to host your event?', ctaLead:'Check availability for your date and send a booking request — we’ll call you to confirm the details.',
  ctaBtn:'Check availability & book', footRights:'All rights reserved', lang:'العربية'
 }};
@@ -311,7 +312,7 @@ function hallCard(kind){
       '<h3>'+esc(t(isWomen?'womenName':'menName'))+'</h3>'+
       '<p class="desc">'+esc(t(isWomen?'womenDesc':'menDesc'))+'</p>'+
       '<div class="featlist">'+feats.map(feat).join('')+'</div>'+
-      '<div class="pricerow"><div class="price"><b class="ltr" style="display:inline-block">'+(isWomen?'2,500':'2,000')+'</b> '+ (lang==='ar'?'ر.س':'SAR') +'<span class="per">'+esc(t('perBooking'))+'</span></div>'+
+      '<div class="pricerow"><div class="price"><span class="per" style="font-weight:600;color:var(--ink);font-size:14px">'+esc(t('perBooking'))+'</span></div>'+
       '<button class="btn sm" type="button" data-action="viewhall" data-cat="'+kind+'">'+esc(t('viewPhotos'))+'</button></div>'+
     '</div></div>';
 }
@@ -319,7 +320,7 @@ function amenCard(kind){
   var isBride=kind==='lounge';
   return '<div class="acard"><div class="amedia"><img src="" data-src="'+kind+'" alt="" data-action="lbopen" data-cat="'+kind+'" data-idx="0"></div>'+
    '<div class="abody"><h3>'+esc(t(isBride?'brideName':'diningName'))+'</h3><p>'+esc(t(isBride?'brideDesc':'diningDesc'))+'</p>'+
-   '<span class="included">'+ICO.check+' '+esc(t('included'))+'</span></div></div>';
+   (isBride?'<span class="addcost">'+esc(t('additionalCost'))+'</span>':'<span class="included">'+ICO.check+' '+esc(t('included'))+'</span>')+'</div></div>';
 }
 function galleryHTML(){
   return '<div class="ggrid">'+GAL.map(function(g,i){ return '<div class="gitem" data-action="lbopen" data-cat="all" data-idx="'+i+'"><img src="" data-src="'+g.k+'" alt=""></div>'; }).join('')+'</div>';
@@ -327,7 +328,7 @@ function galleryHTML(){
 
 function render(){
   document.documentElement.lang=lang; document.documentElement.dir=T[lang].dir;
-  document.title='Virginia Resort';
+  document.title='Virginia Hall';
   var app=document.getElementById('app');
   app.innerHTML=
   '<header><div class="wrap hbar">'+
@@ -405,7 +406,7 @@ function render(){
   '</div></div></section>'+
 
   '<footer><div class="wrap fgrid"><span>'+esc(t('brand'))+' — '+esc(t('footRights'))+'</span>'+
-    '<span class="ltr">Virginia Resort, Hail, Saudi Arabia</span></div></footer>';
+    '<span class="ltr">Virginia Hall, Hail, Saudi Arabia</span></div></footer>';
 
   hydrateImages();
 }
