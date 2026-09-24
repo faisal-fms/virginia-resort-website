@@ -1,0 +1,445 @@
+<title>Virginia Resort</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F7F3EA; --surface:#FFFFFF; --ink:#241C14; --muted:#7A6F5D; --line:#E7DECB;
+  --brand:#14483B; --brand-ink:#FFFFFF; --gold:#AD7F2B; --gold-ink:#3A2C0C;
+  --men:#33363D; --men-tint:#EDEEF0; --women:#A5793A; --women-tint:#FBF1E1;
+  --shadow:0 1px 2px rgba(40,30,10,.06),0 14px 36px rgba(40,30,10,.10);
+  --font:'IBM Plex Sans Arabic','Segoe UI',Tahoma,Arial,sans-serif;
+  --display:'Reem Kufi','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --surface:#1E1B15; --ink:#F1EBDE; --muted:#B3A88F; --line:#332D22;
+    --brand:#4FAE8E; --brand-ink:#06201A; --gold:#DDB463; --gold-ink:#241A05;
+    --men:#C6CAD2; --men-tint:#24262B; --women:#E3B05C; --women-tint:#2A2112;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --surface:#1E1B15; --ink:#F1EBDE; --muted:#B3A88F; --line:#332D22;
+  --brand:#4FAE8E; --brand-ink:#06201A; --gold:#DDB463; --gold-ink:#241A05;
+  --men:#C6CAD2; --men-tint:#24262B; --women:#E3B05C; --women-tint:#2A2112;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button,a{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.ltr{direction:ltr;unicode-bidi:isolate}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+[dir="rtl"] .eyebrow{letter-spacing:0}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:baseline;gap:8px}
+.logo b{font-family:var(--display);font-size:21px;color:var(--brand)}
+.logo span{font-size:11.5px;color:var(--muted);padding-inline-start:8px;border-inline-start:2px solid var(--gold)}
+nav{display:flex;align-items:center;gap:22px}
+nav a.navlink{font-size:14.5px;color:var(--muted);text-decoration:none;white-space:nowrap}
+nav a.navlink:hover{color:var(--ink)}
+.hactions{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:9px 16px;cursor:pointer;font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--brand)}
+.btn.primary{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn.gold{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.btn.sm{padding:6px 12px;font-size:13px}
+.langbtn{border:1px solid var(--line);background:transparent;border-radius:8px;padding:7px 11px;font-size:13px;font-weight:600;cursor:pointer}
+.burger{display:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 10px;cursor:pointer}
+@media (max-width:860px){
+  nav{position:fixed;inset-inline:0;top:64px;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:14px 20px;gap:2px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .15s,transform .15s}
+  nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  nav a.navlink{padding:10px 2px;border-bottom:1px solid var(--line)}
+  .burger{display:inline-flex}
+  .hactions .btn span.long{display:none}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:64px 0}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(30px,4.6vw,50px);line-height:1.12}
+.hero .lead{margin-top:14px;color:var(--muted);font-size:16.5px;max-width:46ch}
+.chiprow{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{display:flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:7px 13px;font-size:13px;color:var(--muted);box-shadow:var(--shadow)}
+.chip svg{flex:none;color:var(--gold)}
+.herobtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.herobtns .btn{padding:12px 22px;font-size:15px}
+.heropics{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.heropics img{width:100%;height:100%;object-fit:cover}
+.heropics .tag{position:absolute;bottom:14px;inset-inline-start:14px;background:rgba(20,15,8,.55);color:#fff;padding:6px 13px;border-radius:100px;font-size:12.5px;backdrop-filter:blur(4px)}
+
+/* section shells */
+section{padding-block:64px}
+.shead{max-width:640px;margin-bottom:34px}
+.shead h2{font-size:clamp(24px,3vw,32px);margin-top:6px}
+.shead p{color:var(--muted);margin-top:10px;font-size:15.5px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+.about-photo{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:5/4}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px}
+.stats div{min-width:110px}
+.stats b{display:block;font-family:var(--display);font-size:26px;color:var(--brand)}
+.stats span{font-size:12.5px;color:var(--muted)}
+
+/* halls */
+.halls{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media (max-width:860px){.halls{grid-template-columns:1fr}}
+.hallcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.hallmedia{position:relative;aspect-ratio:16/11}
+.hallmedia img{width:100%;height:100%;object-fit:cover;cursor:pointer}
+.hallbadge{position:absolute;top:14px;inset-inline-start:14px;padding:6px 13px;border-radius:100px;font-size:12.5px;font-weight:700}
+.hallbadge.women{background:var(--women-tint);color:var(--women)}
+.hallbadge.men{background:var(--men-tint);color:var(--men)}
+.thumbs{display:flex;gap:7px;padding:10px;overflow-x:auto}
+.thumbs img{width:64px;height:48px;object-fit:cover;border-radius:7px;cursor:pointer;flex:none;border:2px solid transparent;opacity:.7}
+.thumbs img:hover{opacity:1}
+.hallbody{padding:20px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.hallbody h3{font-size:21px}
+.hallbody p.desc{color:var(--muted);font-size:14.5px}
+.featlist{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0}
+.feat{font-size:12.5px;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:100px;padding:5px 11px}
+.pricerow{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.price b{font-family:var(--display);font-size:28px;font-variant-numeric:tabular-nums}
+.price .per{font-size:12.5px;color:var(--muted);display:block;margin-top:2px}
+
+/* amenities */
+.amen{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media (max-width:820px){.amen{grid-template-columns:1fr}}
+.acard{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.acard .amedia{aspect-ratio:16/10}
+.acard .amedia img{width:100%;height:100%;object-fit:cover;cursor:pointer}
+.acard .abody{padding:18px 20px}
+.acard h3{font-size:17.5px;margin-bottom:6px}
+.acard p{color:var(--muted);font-size:14px}
+.included{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12.5px;color:var(--brand);font-weight:600}
+
+/* gallery */
+.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:760px){.ggrid{grid-template-columns:repeat(2,1fr)}}
+.gitem{border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:1/1;position:relative}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .25s}
+.gitem:hover img{transform:scale(1.05)}
+
+/* location + contact */
+.locgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px}
+@media (max-width:860px){.locgrid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+.infolist{display:flex;flex-direction:column;gap:16px;margin-top:6px}
+.inforow{display:flex;gap:13px;align-items:flex-start}
+.inforow svg{flex:none;color:var(--gold);margin-top:2px}
+.inforow b{display:block;font-size:14px}
+.inforow span,.inforow a{display:block;color:var(--muted);font-size:14px;text-decoration:none}
+.inforow a:hover{color:var(--brand)}
+.social{display:flex;gap:10px;margin-top:18px}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+.iconbtn:hover{border-color:var(--gold)}
+.mapfake{border-radius:16px;overflow:hidden;position:relative;min-height:260px;background:
+  linear-gradient(135deg,var(--brand) 0%, #0d2e25 100%);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.mapfake .pin{color:#fff;text-align:center;padding:20px}
+.mapfake .pin svg{margin-bottom:8px}
+.mapfake .pin b{display:block;font-family:var(--display);font-size:18px}
+.mapfake .pin span{font-size:13px;opacity:.85}
+.ctaband{background:var(--brand);color:var(--brand-ink);border-radius:20px;padding:40px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.ctaband h2{color:var(--brand-ink)}
+.ctaband p{color:color-mix(in srgb, var(--brand-ink) 80%, transparent);max-width:52ch}
+.ctaband .btn{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+
+footer{border-top:1px solid var(--line);padding-block:30px calc(30px + env(safe-area-inset-bottom,0px));margin-top:20px}
+.fgrid{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,8,4,.9);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .15s}
+.lb.open{opacity:1;pointer-events:auto}
+.lb img{max-width:min(900px,92vw);max-height:80vh;object-fit:contain;border-radius:10px}
+.lb .lbcap{color:#fff;text-align:center;margin-top:12px;font-size:13.5px;opacity:.85}
+.lb button{position:absolute;background:rgba(255,255,255,.12);border:0;color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb button:hover{background:rgba(255,255,255,.22)}
+.lb .close{top:18px;inset-inline-end:18px}
+.lb .prev{top:50%;inset-inline-start:18px;transform:translateY(-50%)}
+.lb .next{top:50%;inset-inline-end:18px;transform:translateY(-50%)}
+[dir="rtl"] .lb .prev svg,[dir="rtl"] .lb .next svg{transform:scaleX(-1)}
+@media (max-width:600px){.lb button{width:36px;height:36px}.lb .prev{inset-inline-start:6px}.lb .next{inset-inline-end:6px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div id="app"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="close" type="button" data-lb="close" aria-label="close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="prev" type="button" data-lb="prev" aria-label="prev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <div><img id="lbimg" src="" alt=""><div class="lbcap ltr" id="lbcap"></div></div>
+  <button class="next" type="button" data-lb="next" aria-label="next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<script src="images.js"></script>
+<script>
+(function(){
+'use strict';
+var BOOKING_URL="https://claude.ai/artifact/So7sntMSEn3pcpD9JUN8fR";
+var MAPS_URL="https://www.google.com/maps/place/Virginia+Resort/@27.464105,41.6468277,17z/data=!3m1!4b1!4m6!3m5!1s0x15763f03ce416c27:0xfa647a6f783ef735!8m2!3d27.464105!4d41.6468277!16s%2Fg%2F11c4wwxhdh";
+var WA_URL="https://wa.me/966555150867";
+var TEL="+966555150867";
+var IG_URL="https://instagram.com/virginia_hail";
+
+var GAL=[
+ {k:'womenA1',cat:'women'},{k:'womenA2',cat:'women'},{k:'womenA3',cat:'women'},
+ {k:'menB1',cat:'men'},{k:'menB2',cat:'men'},{k:'menB3',cat:'men'},{k:'menB4',cat:'men'},
+ {k:'dining',cat:'dining'},{k:'lounge',cat:'lounge'}
+];
+
+var T={
+ar:{
+ dir:'rtl', brand:'منتجع فرجينيا', sub:'حائل',
+ nav_home:'الرئيسية', nav_halls:'القاعات', nav_gallery:'معرض الصور', nav_loc:'الموقع', nav_contact:'تواصل معنا',
+ nav_book:'تحقق من التوفر', nav_book_long:'تحقق من التوفر واحجز',
+ heroEyebrow:'قاعة أفراح ومناسبات', heroTitle:'احتفالات أنيقة تليق بمناسبتكم في قلب حائل',
+ heroLead:'منتجع فرجينيا يضم قاعتين منفصلتين للرجال والنساء بتصميم راقٍ، إضاءة كريستالية، وأرضيات رخامية، مع صالة انتظار خاصة للعروس وقاعة طعام مشتركة.',
+ chip1:'قاعتان منفصلتان', chip2:'وسط مدينة حائل', chip3:'يومياً 12 ظهراً – 3 فجراً',
+ heroBtn1:'تحقق من التوفر وأرسل طلب حجز', heroBtn2:'تواصل عبر واتساب',
+ aboutEyebrow:'من نحن', aboutTitle:'مكان صُمم لمناسباتكم الكبرى',
+ aboutLead:'نستضيف حفلات الزواج والعزائم والمناسبات العائلية في قاعتين مستقلتين تمامًا، بتشطيبات فاخرة وخدمة تهتم بكل تفصيلة — من دخول العروس إلى ضيافة العائلة.',
+ statHalls:'قاعتان', statHallsL:'رجال ونساء بشكل مستقل',
+ statHours:'12–3', statHoursL:'ساعات الاستقبال يومياً',
+ statLoc:'حائل', statLocL:'النقرة، وسط المدينة',
+ hallsEyebrow:'القاعات', hallsTitle:'قاعة لكل ضيوفكم',
+ hallsLead:'سعر واحد شامل للقاعة بالكامل لليوم الواحد — وليس لكل ضيف.',
+ womenName:'قاعة النساء', womenDesc:'قاعة بألوان العاج والذهبي، ثريات كريستالية وأرضيات رخامية، وجلسات مخملية فاخرة لضيوف العروس.',
+ menName:'قاعة الرجال', menDesc:'قاعة بلمسة عصرية بألوان الرمادي الداكن، جلسات لاونج مريحة ونوافذ ممتدة من الأرض إلى السقف.',
+ f_chand:'ثريات كريستالية', f_marble:'أرضيات رخامية', f_seat:'جلسات فاخرة', f_ac:'تكييف مركزي',
+ f_lounge:'جلسات لاونج عصرية', f_window:'نوافذ بانورامية', f_sound:'نظام صوتي', f_spacious:'مساحة واسعة',
+ perBooking:'شامل لليوم كاملاً · وليس للفرد', priceNote:'الأسعار المعروضة استرشادية، ويتم تأكيد السعر النهائي عند التواصل معكم.',
+ viewPhotos:'عرض الصور',
+ amenEyebrow:'خدمات إضافية', amenTitle:'يأتي مع حجزكم',
+ brideName:'صالة انتظار العروس', brideDesc:'صالة خاصة وعصرية تنتظر فيها العروس براحة قبل دخولها القاعة.',
+ diningName:'قاعة الطعام المشتركة', diningDesc:'قاعة طعام مخصصة بطاولات رخامية، مشتركة بين القاعتين لضيافة ضيوفكم.',
+ included:'ضمن الحجز مجاناً',
+ galEyebrow:'لمحة', galTitle:'معرض الصور',
+ locEyebrow:'الموقع وساعات العمل', locTitle:'تفضلوا بزيارتنا',
+ addrLabel:'العنوان', addrVal:'شارع الأمير سعود بن عبدالمحسن آل سعود، النقرة، حائل 55433',
+ hoursLabel:'ساعات الاستقبال', hoursVal:'يومياً من 12 ظهراً حتى 3 فجراً',
+ phoneLabel:'الهاتف / واتساب',
+ igLabel:'إنستغرام', igVal:'virginia_hail@',
+ directions:'فتح في خرائط جوجل', mapPin:'منتجع فرجينيا', mapCity:'حائل، السعودية',
+ ctaTitle:'جاهزون لاستضافة مناسبتكم؟', ctaLead:'تحققوا من توفر التاريخ المناسب لكم وأرسلوا طلب الحجز، وسنتصل بكم لتأكيد التفاصيل.',
+ ctaBtn:'تحقق من التوفر واحجز', footRights:'جميع الحقوق محفوظة', lang:'English'
+},
+en:{
+ dir:'ltr', brand:'Virginia Resort', sub:'Hail',
+ nav_home:'Home', nav_halls:'Halls', nav_gallery:'Gallery', nav_loc:'Location', nav_contact:'Contact',
+ nav_book:'Check availability', nav_book_long:'Check availability & book',
+ heroEyebrow:'Weddings & Gatherings', heroTitle:'Elegant celebrations in the heart of Hail',
+ heroLead:'Virginia Resort offers separate, independent halls for men and women, finished with crystal chandeliers and marble floors, plus a private bride’s lounge and a shared dining hall.',
+ chip1:'Two separate halls', chip2:'Central Hail', chip3:'Daily 12 PM – 3 AM',
+ heroBtn1:'Check availability & request booking', heroBtn2:'Message on WhatsApp',
+ aboutEyebrow:'About us', aboutTitle:'A place built for your biggest moments',
+ aboutLead:'We host weddings, engagements and family gatherings across two fully independent halls, finished to a high standard and attended with care — from the bride’s entrance to your guests’ dining.',
+ statHalls:'2 halls', statHallsL:'Independent men’s & women’s halls',
+ statHours:'12–3', statHoursL:'Reception hours, daily',
+ statLoc:'Hail', statLocL:'Al-Nuqrah, central Hail',
+ hallsEyebrow:'The halls', hallsTitle:'A hall for every guest',
+ hallsLead:'One all-inclusive price for the whole hall, for the day — not per guest.',
+ womenName:'Women’s Hall', womenDesc:'Finished in warm ivory and gold, with crystal chandeliers, marble floors and plush seating for the bride’s guests.',
+ menName:'Men’s Hall', menDesc:'A contemporary hall in charcoal tones, with comfortable lounge seating and floor-to-ceiling windows.',
+ f_chand:'Crystal chandeliers', f_marble:'Marble floors', f_seat:'Premium seating', f_ac:'Central A/C',
+ f_lounge:'Modern lounge seating', f_window:'Floor-to-ceiling windows', f_sound:'Sound system', f_spacious:'Spacious floor',
+ perBooking:'Whole hall, per day · not per guest', priceNote:'Rates shown are a guide — final pricing is confirmed when we get in touch with you.',
+ viewPhotos:'View photos',
+ amenEyebrow:'Included', amenTitle:'Comes with your booking',
+ brideName:'Bride’s Lounge', brideDesc:'A private, modern lounge where the bride can relax before making her entrance into the hall.',
+ diningName:'Shared Dining Hall', diningDesc:'A dedicated dining room with marble tables, shared between both halls for your catering.',
+ included:'Included free',
+ galEyebrow:'A look inside', galTitle:'Gallery',
+ locEyebrow:'Location & hours', locTitle:'Come visit us',
+ addrLabel:'Address', addrVal:'Prince Saud bin Abdulmohsen Al Saud St, Al-Nuqrah, Hail 55433',
+ hoursLabel:'Reception hours', hoursVal:'Daily, 12 PM – 3 AM',
+ phoneLabel:'Phone / WhatsApp',
+ igLabel:'Instagram', igVal:'@virginia_hail',
+ directions:'Open in Google Maps', mapPin:'Virginia Resort', mapCity:'Hail, Saudi Arabia',
+ ctaTitle:'Ready to host your event?', ctaLead:'Check availability for your date and send a booking request — we’ll call you to confirm the details.',
+ ctaBtn:'Check availability & book', footRights:'All rights reserved', lang:'العربية'
+}};
+
+var lang='ar';
+try{ lang=(localStorage.getItem('vr-site-lang')==='en')?'en':'ar'; }catch(e){}
+var navOpen=false, lbIndex=0, lbList=GAL;
+
+function t(k){ return T[lang][k]!=null?T[lang][k]:T.en[k]; }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+
+var ICO={
+ hall:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>',
+ pin:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+ clock:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>',
+ pinBig:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+ check:'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>',
+ phone:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.7a16 16 0 006.3 6.3l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>',
+ wa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 1.8a8.2 8.2 0 016.9 12.6l-.2.3.6 2.3-2.4-.6-.3.2A8.2 8.2 0 1112 3.8zm-3.3 3.7c-.2 0-.5 0-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.1 1.8 2.9 4.5 4 2.2.9 2.6.7 3.1.7.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3l-2-1c-.3-.1-.5-.1-.6.1l-.6.9c-.1.2-.3.2-.5.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.1-.3 0-.4.1-.5l.5-.6c.1-.2.2-.3.2-.5.1-.2 0-.3 0-.5l-.9-2.2c-.2-.5-.4-.4-.6-.4z"/></svg>',
+ ig:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>',
+ map:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-6 2V6l6-2 6 2 6-2v16l-6 2-6-2zM9 4v16M15 6v16"/></svg>',
+ arrow:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+};
+
+function chip(icon,label){ return '<span class="chip">'+ICO[icon]+'<span>'+esc(label)+'</span></span>'; }
+function feat(k){ return '<span class="feat">'+esc(t(k))+'</span>'; }
+
+function hallCard(kind){
+  var isWomen=kind==='women';
+  var imgs=isWomen?['womenA1','womenA2','womenA3']:['menB1','menB2','menB3','menB4'];
+  var feats=isWomen?['f_chand','f_marble','f_seat','f_ac']:['f_lounge','f_window','f_marble','f_sound'];
+  return '<div class="hallcard">'+
+    '<div class="hallmedia"><span class="hallbadge '+(isWomen?'women':'men')+'">'+esc(t(isWomen?'womenName':'menName'))+'</span>'+
+      '<img src="" data-src="'+imgs[0]+'" alt="'+esc(t(isWomen?'womenName':'menName'))+'" data-action="lbopen" data-cat="'+kind+'" data-idx="0"></div>'+
+    '<div class="thumbs">'+imgs.map(function(k,i){ return '<img src="" data-src="'+k+'" alt="" data-action="lbopen" data-cat="'+kind+'" data-idx="'+i+'">'; }).join('')+'</div>'+
+    '<div class="hallbody">'+
+      '<h3>'+esc(t(isWomen?'womenName':'menName'))+'</h3>'+
+      '<p class="desc">'+esc(t(isWomen?'womenDesc':'menDesc'))+'</p>'+
+      '<div class="featlist">'+feats.map(feat).join('')+'</div>'+
+      '<div class="pricerow"><div class="price"><b class="ltr" style="display:inline-block">'+(isWomen?'2,500':'2,000')+'</b> '+ (lang==='ar'?'ر.س':'SAR') +'<span class="per">'+esc(t('perBooking'))+'</span></div>'+
+      '<button class="btn sm" type="button" data-action="viewhall" data-cat="'+kind+'">'+esc(t('viewPhotos'))+'</button></div>'+
+    '</div></div>';
+}
+function amenCard(kind){
+  var isBride=kind==='lounge';
+  return '<div class="acard"><div class="amedia"><img src="" data-src="'+kind+'" alt="" data-action="lbopen" data-cat="'+kind+'" data-idx="0"></div>'+
+   '<div class="abody"><h3>'+esc(t(isBride?'brideName':'diningName'))+'</h3><p>'+esc(t(isBride?'brideDesc':'diningDesc'))+'</p>'+
+   '<span class="included">'+ICO.check+' '+esc(t('included'))+'</span></div></div>';
+}
+function galleryHTML(){
+  return '<div class="ggrid">'+GAL.map(function(g,i){ return '<div class="gitem" data-action="lbopen" data-cat="all" data-idx="'+i+'"><img src="" data-src="'+g.k+'" alt=""></div>'; }).join('')+'</div>';
+}
+
+function render(){
+  document.documentElement.lang=lang; document.documentElement.dir=T[lang].dir;
+  document.title='Virginia Resort';
+  var app=document.getElementById('app');
+  app.innerHTML=
+  '<header><div class="wrap hbar">'+
+    '<div class="logo"><b>'+esc(t('brand'))+'</b><span>'+esc(t('sub'))+'</span></div>'+
+    '<nav id="nav">'+
+      '<a class="navlink" href="#halls">'+esc(t('nav_halls'))+'</a>'+
+      '<a class="navlink" href="#gallery">'+esc(t('nav_gallery'))+'</a>'+
+      '<a class="navlink" href="#location">'+esc(t('nav_loc'))+'</a>'+
+      '<a class="navlink" href="#contact">'+esc(t('nav_contact'))+'</a>'+
+    '</nav>'+
+    '<div class="hactions">'+
+      '<button class="langbtn" type="button" data-action="lang">'+esc(t('lang'))+'</button>'+
+      '<a class="btn primary" href="'+BOOKING_URL+'" target="_blank" rel="noopener"><span class="long">'+esc(t('nav_book_long'))+'</span><span style="display:none" class="short">'+esc(t('nav_book'))+'</span></a>'+
+      '<button class="burger" type="button" data-action="burger" aria-label="menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>'+
+    '</div>'+
+  '</div></header>'+
+
+  '<section class="hero" id="home"><div class="wrap">'+
+    '<div><p class="eyebrow">'+esc(t('heroEyebrow'))+'</p><h1>'+esc(t('heroTitle'))+'</h1>'+
+    '<p class="lead">'+esc(t('heroLead'))+'</p>'+
+    '<div class="chiprow">'+chip('hall',t('chip1'))+chip('pin',t('chip2'))+chip('clock',t('chip3'))+'</div>'+
+    '<div class="herobtns"><a class="btn primary" href="'+BOOKING_URL+'" target="_blank" rel="noopener">'+esc(t('heroBtn1'))+'</a>'+
+    '<a class="btn" href="'+WA_URL+'" target="_blank" rel="noopener">'+ICO.wa+' '+esc(t('heroBtn2'))+'</a></div></div>'+
+    '<div class="heropics"><img src="" data-src="womenA1" alt="" data-action="lbopen" data-cat="women" data-idx="0"><span class="tag">'+esc(t('womenName'))+'</span></div>'+
+  '</div></section>'+
+
+  '<section id="about"><div class="wrap about-grid">'+
+    '<div class="about-photo"><img src="" data-src="menB2" alt="" data-action="lbopen" data-cat="men" data-idx="1"></div>'+
+    '<div><p class="eyebrow">'+esc(t('aboutEyebrow'))+'</p><h2 style="margin-top:6px">'+esc(t('aboutTitle'))+'</h2>'+
+    '<p style="color:var(--muted);margin-top:12px;font-size:15.5px">'+esc(t('aboutLead'))+'</p>'+
+    '<div class="stats"><div><b>'+esc(t('statHalls'))+'</b><span>'+esc(t('statHallsL'))+'</span></div>'+
+    '<div><b class="ltr" style="display:inline-block">'+esc(t('statHours'))+'</b><span>'+esc(t('statHoursL'))+'</span></div>'+
+    '<div><b>'+esc(t('statLoc'))+'</b><span>'+esc(t('statLocL'))+'</span></div></div></div>'+
+  '</div></section>'+
+
+  '<section id="halls"><div class="wrap">'+
+    '<div class="shead"><p class="eyebrow">'+esc(t('hallsEyebrow'))+'</p><h2>'+esc(t('hallsTitle'))+'</h2><p>'+esc(t('hallsLead'))+'</p></div>'+
+    '<div class="halls">'+hallCard('women')+hallCard('men')+'</div>'+
+    '<p style="color:var(--muted);font-size:13px;margin-top:16px">'+esc(t('priceNote'))+'</p>'+
+  '</div></section>'+
+
+  '<section id="amenities"><div class="wrap">'+
+    '<div class="shead"><p class="eyebrow">'+esc(t('amenEyebrow'))+'</p><h2>'+esc(t('amenTitle'))+'</h2></div>'+
+    '<div class="amen">'+amenCard('lounge')+amenCard('dining')+'</div>'+
+  '</div></section>'+
+
+  '<section id="gallery"><div class="wrap">'+
+    '<div class="shead"><p class="eyebrow">'+esc(t('galEyebrow'))+'</p><h2>'+esc(t('galTitle'))+'</h2></div>'+
+    galleryHTML()+
+  '</div></section>'+
+
+  '<section id="location"><div class="wrap">'+
+    '<div class="shead"><p class="eyebrow">'+esc(t('locEyebrow'))+'</p><h2>'+esc(t('locTitle'))+'</h2></div>'+
+    '<div class="locgrid">'+
+      '<div class="mapfake"><a href="'+MAPS_URL+'" target="_blank" rel="noopener" class="pin" style="text-decoration:none">'+ICO.pinBig+'<b>'+esc(t('mapPin'))+'</b><span>'+esc(t('mapCity'))+'</span></a></div>'+
+      '<div class="card" id="contact">'+
+        '<div class="infolist">'+
+          '<div class="inforow">'+ICO.pin+'<div><b>'+esc(t('addrLabel'))+'</b><span>'+esc(t('addrVal'))+'</span></div></div>'+
+          '<div class="inforow">'+ICO.clock+'<div><b>'+esc(t('hoursLabel'))+'</b><span>'+esc(t('hoursVal'))+'</span></div></div>'+
+          '<div class="inforow">'+ICO.phone+'<div><b>'+esc(t('phoneLabel'))+'</b><a class="ltr" style="display:inline-block" href="tel:'+TEL+'">0555 15 0867</a></div></div>'+
+          '<div class="inforow">'+ICO.ig+'<div><b>'+esc(t('igLabel'))+'</b><a href="'+IG_URL+'" target="_blank" rel="noopener">'+esc(t('igVal'))+'</a></div></div>'+
+        '</div>'+
+        '<div class="social">'+
+          '<a class="iconbtn" href="'+WA_URL+'" target="_blank" rel="noopener" aria-label="WhatsApp">'+ICO.wa+'</a>'+
+          '<a class="iconbtn" href="'+IG_URL+'" target="_blank" rel="noopener" aria-label="Instagram">'+ICO.ig+'</a>'+
+          '<a class="iconbtn" href="'+MAPS_URL+'" target="_blank" rel="noopener" aria-label="Maps">'+ICO.map+'</a>'+
+        '</div>'+
+        '<a class="btn gold" style="margin-top:18px;width:100%" href="'+MAPS_URL+'" target="_blank" rel="noopener">'+ICO.pin+' '+esc(t('directions'))+'</a>'+
+      '</div>'+
+    '</div>'+
+  '</div></section>'+
+
+  '<section><div class="wrap"><div class="ctaband"><h2>'+esc(t('ctaTitle'))+'</h2><p>'+esc(t('ctaLead'))+'</p>'+
+    '<a class="btn" href="'+BOOKING_URL+'" target="_blank" rel="noopener">'+esc(t('ctaBtn'))+' '+ICO.arrow+'</a>'+
+  '</div></div></section>'+
+
+  '<footer><div class="wrap fgrid"><span>'+esc(t('brand'))+' — '+esc(t('footRights'))+'</span>'+
+    '<span class="ltr">Virginia Resort, Hail, Saudi Arabia</span></div></footer>';
+
+  hydrateImages();
+}
+function hydrateImages(){
+  var els=[].slice.call(document.querySelectorAll('img[data-src]'));
+  els.forEach(function(el){ var k=el.getAttribute('data-src'); if(window.IMG&&IMG[k]) el.src=IMG[k]; });
+}
+
+/* lightbox */
+function openLB(cat,idx){
+  lbList=(cat==='all')?GAL:GAL.filter(function(g){return g.cat===cat;});
+  lbIndex=idx||0; showLB();
+  var lb=document.getElementById('lb'); lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+}
+function showLB(){
+  var g=lbList[(lbIndex+lbList.length)%lbList.length];
+  document.getElementById('lbimg').src=(window.IMG&&IMG[g.k])||'';
+  document.getElementById('lbcap').textContent=(lbIndex+1)+' / '+lbList.length;
+}
+function closeLB(){ var lb=document.getElementById('lb'); lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+
+document.addEventListener('click',function(e){
+  var el=e.target.closest('[data-action]');
+  if(el){
+    var a=el.getAttribute('data-action');
+    if(a==='lang'){ lang=(lang==='ar')?'en':'ar'; try{localStorage.setItem('vr-site-lang',lang);}catch(x){} render(); window.scrollTo({top:0}); return; }
+    if(a==='burger'){ navOpen=!navOpen; document.getElementById('nav').classList.toggle('open',navOpen); return; }
+    if(a==='lbopen'){ openLB(el.getAttribute('data-cat'),parseInt(el.getAttribute('data-idx'),10)||0); return; }
+    if(a==='viewhall'){ openLB(el.getAttribute('data-cat'),0); return; }
+  }
+  var lbBtn=e.target.closest('[data-lb]');
+  if(lbBtn){ var w=lbBtn.getAttribute('data-lb'); if(w==='close') closeLB(); else if(w==='prev'){ lbIndex--; showLB(); } else if(w==='next'){ lbIndex++; showLB(); } return; }
+  if(e.target.id==='lb') closeLB();
+  var navlink=e.target.closest('.navlink');
+  if(navlink&&navOpen){ navOpen=false; document.getElementById('nav').classList.remove('open'); }
+});
+document.addEventListener('keydown',function(e){
+  var lb=document.getElementById('lb'); if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLB(); else if(e.key==='ArrowLeft'){ lbIndex+= (T[lang].dir==='rtl')?1:-1; showLB(); } else if(e.key==='ArrowRight'){ lbIndex+= (T[lang].dir==='rtl')?-1:1; showLB(); }
+});
+
+render();
+})();
+</script>
